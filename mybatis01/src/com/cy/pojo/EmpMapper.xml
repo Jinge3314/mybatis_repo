@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace一般指定为当前文件的所在包路径+文件名（将来是接口名） 将来在程序中通过[ namespace + id ]定位到执行哪一条SQL语句 -->
+<mapper namespace="com.cy.dao.EmpMapper">
+	<!-- 声明一个SQL片段，指定要查询的列 -->
+	<sql id="empCols">id,name,job,salary</sql>
+
+	<!-- 1.查询：查询Emp表中指定id的员工信息 -->
+	<select id="findById" parameterType="Integer" resultType="com.cy.pojo.Emp">
+		select <include refid="empCols"/> from emp where id=#{id}
+	</select>
+	
+	<!-- 2.查询Emp表中所有员工的信息 -->
+	<select id="findAll" resultType="com.cy.pojo.Emp">
+		select <include refid="empCols"/> from emp
+	</select>
+	
+	
+	
+
+
+
+</mapper>
