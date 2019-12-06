@@ -6,9 +6,13 @@ package com.cy.pojo;
  */
 public class Emp {
 	//声明实体类中的属性
+	//编号
 	private Integer id;
+	//姓名
 	private String name;
+	//工作
 	private String job;
+	//薪资
 	private Double salary;
 	//提供对应的getter和setter方法
 	public Integer getId() {
